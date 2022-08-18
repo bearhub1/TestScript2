@@ -1,6 +1,6 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bearhub1/TestScript2/main/Library.lua?token=GHSAT0AAAAAABWJXTHFR2HWYN7YSUYODFDEYX6HHZA"))()
-local ThemeManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/bearhub1/TestScript2/main/ThemeManager.lua?token=GHSAT0AAAAAABWJXTHEP6UTQFA2QFVX7IH6YX6HKMQ"))()
-local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/bearhub1/TestScript2/main/SaveManager.lua?token=GHSAT0AAAAAABWJXTHEH7XJWGXYGW4GMNFKYX6HJ3A"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bearhub1/TestScript2/main/Library.lua"))()
+local ThemeManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/bearhub1/TestScript2/main/ThemeManager.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/bearhub1/TestScript2/main/SaveManager.lua"))()
 
 local Window = Library:CreateWindow({
     -- Set Center to true if you want the menu to appear in the center
