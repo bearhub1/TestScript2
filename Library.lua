@@ -2067,6 +2067,14 @@ do
             
             if Dropdown.Changed then Dropdown.Changed(Dropdown.Value) end
         end;
+        function Dropdown:RefreshDropdown(Val)
+            Dropdown.Values = Val
+
+            Dropdown:SetValues();
+            Dropdown:Display();
+            
+            if Dropdown.Changed then Dropdown.Changed(Dropdown.Value) end
+        end;
 
         DropdownOuter.InputBegan:Connect(function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 and not Library:MouseIsOverOpenedFrame() then
@@ -2979,5 +2987,3 @@ function Library:CreateWindow(...)
 
     return Window;
 end;
-
-return Library
