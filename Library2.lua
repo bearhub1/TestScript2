@@ -2047,11 +2047,10 @@ do
             if Dropdown.Multi then
                 local nTable = {};
 
-                for Value, Bool in next, Val do
-                    nTable[Value] = true
+                for Value, Bool in pairs(Val) do
+                    Dropdown.Values = Bool;
                 end;
 
-                Dropdown.Values = nTable;
             else
                 if (not Val) then
                     Dropdown.Values = nil;
