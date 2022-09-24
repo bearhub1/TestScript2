@@ -2048,17 +2048,15 @@ do
                 local nTable = {};
 
                 for Value, Bool in next, Val do
-                    if table.find(Dropdown.Values, Value) then
-                        nTable[Value] = true
-                    end;
+                    nTable[Value] = true
                 end;
 
-                Dropdown.Value = nTable;
+                Dropdown.Values = nTable;
             else
                 if (not Val) then
-                    Dropdown.Value = nil;
+                    Dropdown.Values = nil;
                 elseif table.find(Dropdown.Values, Val) then
-                    Dropdown.Value = Val;
+                    Dropdown.Values = Val;
                 end;
             end;
 
