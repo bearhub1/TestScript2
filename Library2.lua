@@ -1053,6 +1053,7 @@ do
             end
 
             Groupbox:Resize();
+            if TextLabel.Changed then TextLabel.Changed(TextLabel.Value) end
         end
 
         if (not DoesWrap) then
@@ -2047,15 +2048,18 @@ do
             if Dropdown.Multi then
                 local nTable = {};
 
-                for Value, Bool in pairs(Val) do
-                    Dropdown.Values = Bool;
+                for Value, Bool in next, Val do
+                    if table.find(Dropdown.Values, Value) then
+                        nTable[Value] = true
+                    end;
                 end;
 
+                Dropdown.Value = nTable;
             else
                 if (not Val) then
-                    Dropdown.Values = nil;
+                    Dropdown.Value = nil;
                 elseif table.find(Dropdown.Values, Val) then
-                    Dropdown.Values = Val;
+                    Dropdown.Value = Val;
                 end;
             end;
 
@@ -2065,19 +2069,8 @@ do
             if Dropdown.Changed then Dropdown.Changed(Dropdown.Value) end
         end;
         function Dropdown:RefreshDropdown(Val)
-            if Dropdown.Multi then 
-                local nTable = {};
+            Dropdown.Values = Val
 
-                for Value, Bool in next, Val do
-                    if table.find(Dropdown.Values, Value) then
-                        nTable[Value] = true
-                    end;
-                end;
-
-                Dropdown.Values = nTable;
-            else
-                Dropdown.Values = Val
-            end
             Dropdown:SetValues();
             Dropdown:Display();
             
